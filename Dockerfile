@@ -20,4 +20,3 @@ EXPOSE 8081
 USER 1001
 
 # The CMD from the base image remains the same
-~                                                  
