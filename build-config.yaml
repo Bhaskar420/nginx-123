@@ -1,0 +1,16 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: arangodb-build
+spec:
+  source:
+    type: Git
+    git:
+      uri: "https://github.com/Bhaskar420/nginx-123.git"
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: "arangodb-custom:latest"
+

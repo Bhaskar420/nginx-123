@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arangodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arangodb
+  template:
+    metadata:
+      labels:
+        app: arangodb
+    spec:
+      containers:
+      - name: arangodb
+        image: image-registry.apps.rm2.thpm.p1.openshiftapps.com/vvnbhakar024-dev/bhaskar 
+        ports:
+          - containerPort: 8529
+        env:
+        - name: ARANGO_ROOT_PASSWORD
+          value: "mysecret"
+
